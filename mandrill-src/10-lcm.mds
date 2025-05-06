@@ -1,0 +1,20 @@
+a = read;
+b = read;
+
+init_a = a;
+init_b = b;
+
+if (b > a) {
+    c = a;
+    a = b;
+    b = c;
+}
+
+while (a % b != 0) {
+    c = b;
+    b = a % b;
+    a = b;
+}
+
+write = init_a / b * init_b / b * b;
+put = '\n';

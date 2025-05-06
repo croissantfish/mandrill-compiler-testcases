@@ -1,0 +1,31 @@
+c = get;
+digit_prefix_printed = 0;
+while (c != 0) {
+    if ((c == '+') + (c == '-') + (c == '*') + (c == '/')) {
+        if (digit_prefix_printed == 1) {
+            put = ']';
+            put = '\n';
+            digit_prefix_printed = 0;
+        }
+        put = '[';
+        put = 'o'; put = 'p'; put = ':';
+        put = c;
+        put = ']';
+    }
+    if ((c >= '0') * (c <= '9')) {
+        if (digit_prefix_printed == 0) {
+            put = '[';
+            put = 'd'; put = 'i'; put = 'g'; put = 'i'; put = 't'; put = ':';
+            digit_prefix_printed = 1;
+        }
+        put = 'c';
+    }
+    if ((c == ' ') + (c == '\n') + (c == '\r') + (c == '\t')) {
+        if (digit_prefix_printed == 1) {
+            put = ']';
+            put = '\n';
+            digit_prefix_printed = 0;
+        }
+    }
+    c = get;
+}

@@ -1,0 +1,6 @@
+[keyword:write]
+[op:=]
+[keyword:read]
+[op:+]
+[literal:0x1]
+[op:;]
