@@ -1,8 +1,8 @@
 a = read;
 b = read;
 
-init_a = a;
-init_b = b;
+inita = a;
+initb = b;
 
 if (b > a) {
     c = a;
@@ -16,5 +16,5 @@ while (a % b != 0) {
     a = b;
 }
 
-write = init_a / b * init_b / b * b;
+write = inita / b * initb / b * b;
 put = '\n';
