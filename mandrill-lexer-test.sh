@@ -8,11 +8,11 @@ timeo=180s
 
 function _SC() #safe call
 {
-    echo "[RUNNING] : $*"
+    printf "[RUNNING] : %s\n" "$*"
     eval $*
     if [ $? -ne 0 ]; then
         echo "[ERROR] : command $* failed, please check, exiting..."
-        exit
+        exit 1
     fi
 }
 
@@ -44,21 +44,27 @@ for name in ${names[@]}; do
     rm -rf $log_file
     score=0
     full_score=0
-    echo now testing ${name}...
+    echo "####################################################"
+    echo "# Student account: ${name}"
+    echo "####################################################"
     _SC cd students
     if [ ! -d $name ]; then
         _SC mkdir $name "&&" cd $name
-        _SC git clone "git@bitbucket.org:${name}/mandrill2025.git"
+        (_SC git clone "git@bitbucket.org:${name}/mandrill2025.git") || { echo "[ERROR] cannot clone code, goto next student..."; continue; }
         _SC cd ..
     fi
+    if [ ! -d $name/mandrill2025 ]; then
+        echo "[ERROR] cannot find student code, goto next student..."
+        continue
+    fi
     _SC cd $name/mandrill2025
-    _SC git checkout -f main
-    _SC git pull
+    (_SC git checkout -f main) || { echo "[ERROR] cannot checkout the main, goto next student..."; continue; }
+    (_SC git pull) || { echo "[ERROR] cannot update student code, goto next student..."; continue; }
     _SC git fetch --tags
-    _SC git checkout -f lexer #pay attention to your tag! someone don't have the midterm tag
-    _SC make clean #some one don't have make clean
-    _SC make
-    _SC cat ./lexervars.sh
+    (_SC git checkout -f lexer) || { echo "[ERROR] cannot checkout lexer tag, goto next student..."; continue; }
+    (_SC make clean) || { echo "[ERROR] clean previous build failed, goto next student..."; continue; }
+    (_SC make) || { echo "[ERROR] compiling student code failed, goto next student..."; continue; }
+    (_SC cat ./lexervars.sh) || { echo "[ERROR] file to set CCHK is not existed, goto next student..."; continue; }
 
     unset -v CCHK
     set -x
@@ -66,6 +72,10 @@ for name in ${names[@]}; do
     set +x
     echo CCHK=$CCHK
 
+    if [ ! -d bin ]; then
+        echo "[ERROR] make did not create bin directory, goto next student..."
+        continue
+    fi
     _SC cd bin
     for filec in $(ls $normaldir/*.mds); do
 #        filein=${filec%.mds}.in
