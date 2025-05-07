@@ -2,7 +2,7 @@
 [op:=]
 [keyword:get]
 [op:;]
-[id:digit_prefix_printed]
+[id:digitprefixprinted]
 [op:=]
 [literal:0x0]
 [op:;]

@@ -1,5 +1,5 @@
 c = get;
-digit_prefix_printed = 0;
+digitprefixprinted = 0;
 while (c != 0) {
     if ((c == '+') + (c == '-') + (c == '*') + (c == '/')) {
         if (digitprefixprinted == 1) {
