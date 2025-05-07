@@ -1,11 +1,11 @@
 c = get;
-digitprefixprinted = 0;
+prefixprinted = 0;
 while (c != 0) {
     if ((c == '+') + (c == '-') + (c == '*') + (c == '/')) {
-        if (digitprefixprinted == 1) {
+        if (prefixprinted == 1) {
             put = ']';
             put = '\n';
-            digitprefixprinted = 0;
+            prefixprinted = 0;
         }
         put = '[';
         put = 'o'; put = 'p'; put = ':';
@@ -13,18 +13,18 @@ while (c != 0) {
         put = ']';
     }
     if ((c >= '0') * (c <= '9')) {
-        if (digitprefixprinted == 0) {
+        if (prefixprinted == 0) {
             put = '[';
             put = 'd'; put = 'i'; put = 'g'; put = 'i'; put = 't'; put = ':';
-            digitprefixprinted = 1;
+            prefixprinted = 1;
         }
         put = 'c';
     }
     if ((c == ' ') + (c == '\n')) {
-        if (digitprefixprinted == 1) {
+        if (prefixprinted == 1) {
             put = ']';
             put = '\n';
-            digitprefixprinted = 0;
+            prefixprinted = 0;
         }
     }
     c = get;
