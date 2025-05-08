@@ -80,10 +80,16 @@ for name in ${names[@]}; do
     _SC cd bin
     for filec in $(ls $normaldir/*.mds); do
 #        filein=${filec%.mds}.in
+        full_score=$((full_score+1))
         fileout=$stdlexoutdir/$(basename ${filec%.mds}).lexerout
         _SC cp $filec data.mds
         echo "[RUNNING] timeout $timeo $CCHK <data.mds 1>data.lexerout"
         timeout $timeo $CCHK <data.mds 1>data.lexerout
+        if [ $? -ne 0 ]; then
+            echo "FAILED: Time Limit Exceeded or Runtime Error"
+            echo ${filec%.mds} : FAILED >>$log_file
+            continue
+        fi
 #        if [ -f $filein ]; then
 #            timeout $timeo spim -ldata 209715200 -lstack 104857600 -stat_file spimstat -file assem.s <$filein 1>spimout 2>/dev/null
 #        else
@@ -92,7 +98,6 @@ for name in ${names[@]}; do
         pure_file_name=$(basename $filec)
         pure_file_name=${pure_file_name%.mds}
         diff data.lexerout $fileout >$diff_result_dir/$pure_file_name.lexerout.diff.txt
-        full_score=$((full_score+1))
 #        file_limit=${filec%.mx}.limit
 #        if [ -f $file_limit ]; then
 #            full_score=$((full_score+1))
