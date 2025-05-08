@@ -4,7 +4,7 @@ echo 'please modify the $names variable to be your own id'
 names=$(cat list.txt) #modify to be your own id
 echo $names
 sleep 2
-timeo=180s
+timeo=10s
 
 function _SC() #safe call
 {
