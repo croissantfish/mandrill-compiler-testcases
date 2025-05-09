@@ -1,0 +1,7 @@
+a = read;
+while (a != 0) {
+    tot = tot + a;
+    a = read;
+}
+write = tot;
+put = '\n';

@@ -1,0 +1,13 @@
+n = read;
+e = read;
+mod = read;
+out = 1;
+while (e = 0) {
+    if (e % 2 = 1) {
+        out = out * n % mod;
+
+    n = n * n % mod;
+    e = e / 2;
+}
+write = out;
+put = '\n'
