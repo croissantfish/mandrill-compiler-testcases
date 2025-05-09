@@ -1,0 +1,9 @@
+u = read;
+i = 0;
+tot = 0;
+while (i <= u) {
+    tot = tot + i;
+    i  i + 1;
+}
+write = tot;
+put = '\n';

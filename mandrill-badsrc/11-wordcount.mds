@@ -1,0 +1,16 @@
+cnt = 0;
+c = get;
+haschar = 0;
+while (c != 0) {
+    if ((c == ) + (c == '\n')){
+        if (haschar) {
+            cnt = cnt + 1;
+            haschar = 0;
+        }
+    } else {
+        haschar = 1;
+    }
+    c = get;
+}
+write = cnt;
+put = '\n';
