@@ -1,0 +1,3 @@
+a = get;
+write = a;
+put = '\n';

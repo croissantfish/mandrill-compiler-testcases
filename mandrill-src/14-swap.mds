@@ -1,0 +1,11 @@
+a = 1000;
+b = 9999;
+
+c = a;
+a = b;
+b = c;
+
+write = a;
+put = ' ';
+write = b;
+put = '\n';

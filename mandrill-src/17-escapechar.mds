@@ -1,0 +1,8 @@
+put = '\n';
+put = '\\';
+put = '\n';
+put = '\'';
+put = '\\';
+put = 'n';
+put = '\'';
+put = '\n';
