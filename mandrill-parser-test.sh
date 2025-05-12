@@ -22,12 +22,12 @@ mkdir -p students
 
 if [ ! -d mandrill-compiler-testcases ]; then
     _SC git clone git@github.com:croissantfish/mandrill-compiler-testcases.git
-else
-    _SC cd mandrill-compiler-testcases
-    _SC git pull
-    (_SC git checkout parser) || { echo "[WARNING] Cannot find specific branch, use main branch for test."; }
-    _SC cd ..
 fi
+
+_SC cd mandrill-compiler-testcases
+_SC git pull
+(_SC git checkout parser) || { echo "[WARNING] Cannot find specific branch, use main branch for test."; }
+_SC cd ..
 
 normaldir=$(pwd)/mandrill-compiler-testcases/mandrill-src
 baddir=$(pwd)/mandrill-compiler-testcases/mandrill-badsrc
