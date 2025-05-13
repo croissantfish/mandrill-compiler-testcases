@@ -130,6 +130,7 @@ for name in ${names[@]}; do
     cd $outdir
 done
 
+cd $outdir
 _SC cd mandrill-compiler-testcases
 _SC git checkout -f main
 cd $outdir
