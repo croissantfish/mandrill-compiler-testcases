@@ -1,6 +1,6 @@
 a = 'a';
 b = a + 1;
-put = b
+put = b;
 put = ' ';
 put = 'b';
 put = '\n';
