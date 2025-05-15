@@ -103,7 +103,7 @@ for name in ${names[@]}; do
 #        if [ -f $file_limit ]; then
 #            full_score=$((full_score+1))
 #        fi
-        if [ ! -s $diff_result_dir/$pure_file_name ]; then
+        if [ ! -s $diff_result_dir/$pure_file_name.lexerout.diff.txt ]; then
             echo PASSED
             score=$((score+1))
 #            if [ -f $file_limit ]; then

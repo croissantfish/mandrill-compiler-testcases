@@ -94,7 +94,7 @@ for name in ${names[@]}; do
         pure_file_name=$(basename $filec)
         pure_file_name=${pure_file_name%.mds}
         diff data.parserout $fileout >$diff_result_dir/$pure_file_name.parserout.diff.txt
-        if [ ! -s $diff_result_dir/$pure_file_name ]; then
+        if [ ! -s $diff_result_dir/$pure_file_name.parserout.diff.txt ]; then
             echo PASSED
             score=$((score+1))
         else
@@ -118,7 +118,7 @@ for name in ${names[@]}; do
         pure_file_name=$(basename $filec)
         pure_file_name=${pure_file_name%.mds}
         diff data.parserout $fileout >$diff_result_dir/$pure_file_name.parserout.diff.txt
-        if [ ! -s $diff_result_dir/$pure_file_name ]; then
+        if [ ! -s $diff_result_dir/$pure_file_name.parserout.diff.txt ]; then
             echo PASSED
             score=$((score+1))
         else
