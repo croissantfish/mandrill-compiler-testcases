@@ -1,0 +1,9 @@
+a = 20;
+b = 1;
+while (b <= 20) {
+    if (a % b == 0) {
+        put = 'T';
+    } else {
+        put = 'F';
+    }
+}

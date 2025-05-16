@@ -1,0 +1,41 @@
+a = 20;
+if (a % 1 == 0) {
+    write = 1;
+    put = '\n';
+}
+if (a % 2 == 0) {
+    write = 2;
+    put = '\n';
+}
+if (a % 3 == 0) {
+    write = 3;
+    put = '\n';
+}
+if (a % 4 == 0) {
+    write = 4;
+    put = '\n';
+}
+if (a % 5 == 0) {
+    write = 5;
+    put = '\n';
+}
+if (a % 6 == 0) {
+    write = 6;
+    put = '\n';
+}
+if (a % 7 == 0) {
+    write = 7;
+    put = '\n';
+}
+if (a % 8 == 0) {
+    write = 8;
+    put = '\n';
+}
+if (a % 9 == 0) {
+    write = 9;
+    put = '\n';
+}
+if (a % 10 == 0) {
+    write = 10;
+    put = '\n';
+}

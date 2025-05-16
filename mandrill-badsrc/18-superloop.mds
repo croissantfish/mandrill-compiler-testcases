@@ -1,0 +1,39 @@
+h = 99;
+i = 100;
+j = 101;
+k = 102;
+
+N = read;
+
+a = 1;
+while (a <= N) {
+    b = 1;
+    while (b <= N) {
+        c = 1;
+        while (c <= N) {
+            d = 1;
+            while (d <= N) {
+                e = 1;
+                while (e <= N) {
+                    f = 1;                  
+                    while (f <= N) {
+                        if ((a!=b) * (a!=c) * (a!=d) * (a!=e) * (a!=f) * (a!=h) * (a!=i) * (a!=j) * (a!=k)
+                                * (b!=c) * (b!=d) * (b!=e) * (b!=f) * (b!=h) * (b!=i) * (b!=j) * (b!=k)
+                                * (c!=d) * (c!=e) * (c!=f) * (c!=h) * (c!=i) * (c!=j) * (c!=k)
+                                * (d!=e) * (d!=f) * (d!=h) * (d!=i) * (d!=j) * (d!=k)
+                                * (e!=f) * (e!=h) * (e!=i) * (e!=j) * (e!=k)
+                                * (f!=h) * (f!=i) * (f!=j) * (f!=k) * (i!=j) * (h!=k)) {
+                            total = total + 1;
+                        }
+                        f = f + 1;
+                    }
+                    e = e + 1;
+                }
+                d = d + 1;
+            }
+            c = c + 1;
+        }
+        b = b + 1;
+    }
+    a = a + 1;
+}

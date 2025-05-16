@@ -1,0 +1,101 @@
+a = 20;
+if (a % 1 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 2 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 3 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 4 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 5 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 6 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 7 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 8 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 9 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 10 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 11 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 12 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 13 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 14 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 15 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 16 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 17 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 18 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 19 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
+if (a % 20 == 0) {
+    put = 'T';
+} else {
+    put = 'F';
+}
