@@ -101,7 +101,6 @@ for name in ${names[@]}; do
             echo ${filec%.mds} : FAILED >>$log_file
             echo "FAILED: WRONG ANSWER, Please check $diff_result_dir/$pure_file_name.parserout.diff.txt."
         fi
-        sleep 1
     done
     for filec in $(ls $baddir/*.mds); do
         full_score=$((full_score+1))
@@ -125,7 +124,6 @@ for name in ${names[@]}; do
             echo ${filec%.mds} : FAILED >>$log_file
             echo "FAILED: WRONG ANSWER, Please check $diff_result_dir/$pure_file_name.parserout.diff.txt."
         fi
-        sleep 1
     done
     echo count: $score/$full_score >>$log_file
     echo count: $score/$full_score
