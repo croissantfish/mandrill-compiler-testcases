@@ -87,7 +87,7 @@ for name in ${names[@]}; do
         echo "[RUNNING] timeout $timeo $CCHK <data.mds 1>data.lexerout"
         timeout $timeo $CCHK <data.mds 1>data.lexerout
         if [ $? -ne 0 ]; then
-            echo "FAILED: Time Limit Exceeded or Runtime Error"
+            echo "FAILED: Time Limit Exceeded or Runtime Error, return code: $?"
             echo ${filec%.mds} : FAILED >>$log_file
             continue
         fi
