@@ -3,20 +3,20 @@ i = 100;
 j = 101;
 k = 102;
 
-N = read;
+nnn = read;
 
 a = 1;
-while (a <= N) {
+while (a <= nnn) {
     b = 1;
-    while (b <= N) {
+    while (b <= nnn) {
         c = 1;
-        while (c <= N) {
+        while (c <= nnn) {
             d = 1;
-            while (d <= N) {
+            while (d <= nnn) {
                 e = 1;
-                while (e <= N) {
+                while (e <= nnn) {
                     f = 1;                  
-                    while (f <= N) {
+                    while (f <= nnn) {
                         if ((a!=b) * (a!=c) * (a!=d) * (a!=e) * (a!=f) * (a!=h) * (a!=i) * (a!=j) * (a!=k)
                                 * (b!=c) * (b!=d) * (b!=e) * (b!=f) * (b!=h) * (b!=i) * (b!=j) * (b!=k)
                                 * (c!=d) * (c!=e) * (c!=f) * (c!=h) * (c!=i) * (c!=j) * (c!=k)
