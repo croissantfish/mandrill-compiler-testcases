@@ -86,8 +86,9 @@ for name in ${names[@]}; do
         _SC cp $filec data.mds
         echo "[RUNNING] timeout $timeo $CCHK <data.mds 1>data.parserout"
         timeout $timeo $CCHK <data.mds 1>data.parserout
-        if [ $? -ne 0 ]; then
-            echo "FAILED: Time Limit Exceeded or Runtime Error, return code: $?"
+        returncode=$?
+        if [ $returncode -ne 0 ]; then
+            echo "FAILED: Time Limit Exceeded or Runtime Error, return code: $returncode"
             echo ${filec%.mds} : FAILED >>$log_file
             continue
         fi
@@ -109,8 +110,9 @@ for name in ${names[@]}; do
         _SC cp $filec data.mds
         echo "[RUNNING] timeout $timeo $CCHK <data.mds 1>data.parserout"
         timeout $timeo $CCHK <data.mds 1>data.parserout
-        if [ $? -ne 0 ]; then
-            echo "FAILED: Time Limit Exceeded or Runtime Error, return code: $?"
+        returncode=$?
+        if [ $returncode -ne 0 ]; then
+            echo "FAILED: Time Limit Exceeded or Runtime Error, return code: $returncode"
             echo ${filec%.mds} : FAILED >>$log_file
             continue
         fi
