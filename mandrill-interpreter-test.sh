@@ -26,7 +26,7 @@ fi
 
 _SC cd mandrill-compiler-testcases
 _SC git pull
-(_SC git checkout parser) || { echo "[WARNING] Cannot find specific branch, use main branch for test."; }
+(_SC git checkout interpreter) || { echo "[WARNING] Cannot find specific branch, use main branch for test."; }
 _SC cd ..
 
 normaldir=$(pwd)/mandrill-compiler-testcases/mandrill-src
