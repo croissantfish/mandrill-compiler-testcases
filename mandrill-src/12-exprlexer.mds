@@ -11,6 +11,7 @@ while (c != 0) {
         put = 'o'; put = 'p'; put = ':';
         put = c;
         put = ']';
+        put = '\n';
     }
     if ((c >= '0') * (c <= '9')) {
         if (prefixprinted == 0) {
