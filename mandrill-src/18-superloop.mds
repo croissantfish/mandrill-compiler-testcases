@@ -37,3 +37,5 @@ while (a <= nnn) {
     }
     a = a + 1;
 }
+write = total;
+put = '\n';
