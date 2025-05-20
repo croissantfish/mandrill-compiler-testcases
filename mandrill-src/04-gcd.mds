@@ -10,7 +10,7 @@ if (b > a) {
 while (a % b != 0) {
     c = b;
     b = a % b;
-    a = b;
+    a = c;
 }
 
 write = b;

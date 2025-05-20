@@ -18,7 +18,7 @@ while (c != 0) {
             put = 'd'; put = 'i'; put = 'g'; put = 'i'; put = 't'; put = ':';
             prefixprinted = 1;
         }
-        put = 'c';
+        put = c;
     }
     if ((c == ' ') + (c == '\n')) {
         if (prefixprinted == 1) {

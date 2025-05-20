@@ -6,4 +6,6 @@ while (b <= 20) {
     } else {
         put = 'F';
     }
+    b = b + 1;
 }
+put = '\n';

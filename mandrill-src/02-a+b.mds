@@ -1,1 +1,2 @@
 write = read + read;
+put = '\n';

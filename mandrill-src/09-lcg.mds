@@ -8,4 +8,5 @@ while (i < num) {
     seed = (seed * b + c) % mod;
     write = seed;
     put = '\n';
+    i = i + 1;
 }
