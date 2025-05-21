@@ -82,8 +82,10 @@ for name in ${names[@]}; do
     _SC cd bin
     for filec in $normaldir/*.mds; do
         full_score=$((full_score+1))
-        fileans=$ansdir/$(basename ${filec%.mds}).ans
-        filein=$inputdir/$(basename ${filec%.mds}).in
+        pure_file_name=$(basename $filec)
+        pure_file_name=${pure_file_name%.mds}
+        fileans=$ansdir/$pure_file_name.ans
+        filein=$inputdir/$pure_file_name.in
         _SC cp $filec data.mds
         _SC cp $filein mandrill.in
         echo "[RUNNING] timeout $timeo $CCHK <data.mds 1>data.out"
@@ -94,8 +96,6 @@ for name in ${names[@]}; do
             echo ${filec%.mds} : FAILED >>$log_file
             continue
         fi
-        pure_file_name=$(basename $filec)
-        pure_file_name=${pure_file_name%.mds}
         diff data.out $fileans >$diff_result_dir/$pure_file_name.out.diff.txt
         if [ ! -s $diff_result_dir/$pure_file_name.out.diff.txt ]; then
             echo PASSED
