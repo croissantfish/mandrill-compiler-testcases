@@ -25,8 +25,10 @@ if [ ! -d mandrill-compiler-testcases ]; then
 fi
 
 _SC cd mandrill-compiler-testcases
+_SC git fetch --all
 _SC git pull
 (_SC git checkout interpreter) || { echo "[WARNING] Cannot find specific branch, use main branch for test."; }
+(_SC git pull) || { echo "[WARNING] Updating testcases failed, use old version for test."; }
 _SC cd ..
 
 normaldir=$(pwd)/mandrill-compiler-testcases/mandrill-src
