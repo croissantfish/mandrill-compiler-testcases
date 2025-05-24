@@ -57,13 +57,13 @@ for name in ${names[@]}; do
     fi
     if [ ! -d $name/mandrill2025 ]; then
         _SC cd $name
-        (_SC git clone "git@bitbucket.org:${name}/mandrill2025.git") || { echo "[ERROR] cannot clone code, goto next student..."; echo $name "0/-8" >>$statistics; continue; }
-         _SC cd ..
+        (_SC git clone "git@bitbucket.org:${name}/mandrill2025.git") || (_SC git clone "git@bitbucket.org:${name}/mandrill2025.git") || (_SC git clone "git@bitbucket.org:${name}/mandrill2025.git") || { echo "[ERROR] cannot clone code, goto next student..."; echo $name "0/-8" >>$statistics; continue; }
+        _SC cd ..
     fi
     _SC cd $name/mandrill2025
     (_SC git checkout -f main) || { echo "[ERROR] cannot checkout the main, goto next student..."; echo $name "0/-7" >>$statistics; continue; }
-    (_SC git pull) || { echo "[ERROR] cannot update student code, goto next student..."; echo $name "0/-6" >>$statistics; continue; }
-    _SC git fetch -f --tags
+    (_SC git pull) || (_SC git pull) || (_SC git pull) || { echo "[ERROR] cannot update student code, goto next student..."; echo $name "0/-6" >>$statistics; continue; }
+    (_SC git fetch -f --tags) || (_SC git fetch -f --tags) || (_SC git fetch -f --tags) || { echo "[WARNING] cannot update git tags, goto next student..."; echo $name "0/-5.5" >>$statistics; continue; }
     (_SC git checkout -f interpreter) || { echo "[ERROR] cannot checkout interpreter tag, goto next student..."; echo $name "0/-5" >>$statistics; continue; }
     (_SC make clean) || { echo "[ERROR] clean previous build failed, goto next student..."; echo $name "0/-4" >>$statistics; continue; }
     (_SC make) || { echo "[ERROR] compiling student code failed, goto next student..."; echo $name "0/-3" >>$statistics; continue; }
