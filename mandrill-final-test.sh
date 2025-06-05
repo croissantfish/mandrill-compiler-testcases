@@ -70,6 +70,7 @@ for name in ${names[@]}; do
     (_SC cat ./finalvars.sh) || { echo "[ERROR] file to set CCHK and VMRUN is not existed, goto next student..."; echo $name "0/-2" >>$statistics; continue; }
 
     unset -v CCHK
+    unset -v VMRUN
     set -x
     source ./finalvars.sh #can't ensure SC here
     set +x
