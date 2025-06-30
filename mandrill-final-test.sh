@@ -36,8 +36,7 @@ inputdir=$(pwd)/mandrill-compiler-testcases/mandrill-in
 ansdir=$(pwd)/mandrill-compiler-testcases/mandrill-ans
 resdir=$(pwd)/results
 mkdir -p $resdir
-statistics=$resdir/statistics
-#rm -rf $statistics
+statistics=$resdir/statistics-$(date)
 
 for name in ${names[@]}; do
     cd $outdir || exit 1
@@ -52,19 +51,11 @@ for name in ${names[@]}; do
     echo "# Student account: ${name}"
     echo "####################################################"
     _SC cd students
-    if [ ! -d $name ]; then
-        _SC mkdir $name
-    fi
-    if [ ! -d $name/mandrill2025 ]; then
-        _SC cd $name
-        (_SC git clone "git@bitbucket.org:${name}/mandrill2025.git") || (_SC git clone "git@bitbucket.org:${name}/mandrill2025.git") || (_SC git clone "git@bitbucket.org:${name}/mandrill2025.git") || { echo "[ERROR] cannot clone code, goto next student..."; echo $name "0/-8" >>$statistics; continue; }
-        _SC cd ..
-    fi
-    _SC cd $name/mandrill2025
-    (_SC git checkout -f main) || { echo "[ERROR] cannot checkout the main, goto next student..."; echo $name "0/-7" >>$statistics; continue; }
-    (_SC git pull) || (_SC git pull) || (_SC git pull) || { echo "[ERROR] cannot update student code, goto next student..."; echo $name "0/-6" >>$statistics; continue; }
-    (_SC git fetch -f --tags) || (_SC git fetch -f --tags) || (_SC git fetch -f --tags) || { echo "[WARNING] cannot update git tags, goto next student..."; echo $name "0/-5.5" >>$statistics; continue; }
-    (_SC git checkout -f final) || { echo "[ERROR] cannot checkout final tag, goto next student..."; echo $name "0/-5" >>$statistics; continue; }
+    rm -rf $name
+    _SC mkdir $name
+    _SC cd $name
+    (_SC git clone --branch final --depth 1 "git@bitbucket.org:${name}/mandrill2025.git") || (_SC git clone --branch final --depth 1 "git@bitbucket.org:${name}/mandrill2025.git") || (_SC git clone --branch final --depth 1 "git@bitbucket.org:${name}/mandrill2025.git") || { echo "[ERROR] cannot clone code, goto next student..."; echo $name "0/-8" >>$statistics; continue; }
+    cd $name/mandrill2025 || continue
     (_SC make clean) || { echo "[ERROR] clean previous build failed, goto next student..."; echo $name "0/-4" >>$statistics; continue; }
     (_SC make) || { echo "[ERROR] compiling student code failed, goto next student..."; echo $name "0/-3" >>$statistics; continue; }
     (_SC cat ./finalvars.sh) || { echo "[ERROR] file to set CCHK and VMRUN is not existed, goto next student..."; echo $name "0/-2" >>$statistics; continue; }
@@ -116,8 +107,6 @@ for name in ${names[@]}; do
     echo count: $score/$full_score >>$log_file
     echo count: $score/$full_score
     echo $name $score/$full_score >>$statistics
-    _SC cd ..
-    _SC git checkout -f main
     cd $outdir || exit 1
 done
 
